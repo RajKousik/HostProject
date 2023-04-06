@@ -31,7 +31,7 @@ const Navbar = () => {
       navigate("/login")
     } 
     catch (err) {
-      setErr(err.response.data);
+      console.log(err)
     }
   };
 
