@@ -1,8 +1,8 @@
 import "./rightBar.scss";
-import { AuthContext } from "../../context/authContext";
+
 import { useQuery } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
-import { useContext } from "react";
+
 import { Link } from "react-router-dom";
 
 
@@ -10,7 +10,6 @@ import { Link } from "react-router-dom";
 const RightBar = () => {
 
 
-  const { currentUser } = useContext(AuthContext);
 
   const object = JSON.parse(localStorage.getItem("user"));
   const user_id = object.id;

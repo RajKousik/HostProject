@@ -19,7 +19,7 @@ const Post = ({ post }) => {
 
   const { currentUser } = useContext(AuthContext);
 
-  const { isLoading, error, data } = useQuery(["likes", post.id], () =>
+  const { isLoading, data } = useQuery(["likes", post.id], () =>
     makeRequest.get("/likes?postId=" + post.id).then((res) => {
       return res.data;
     })
@@ -56,7 +56,7 @@ const Post = ({ post }) => {
   const temp = post.img.split(".");
   const type = temp[1];
 
-  const[isImage, setIsImage] = useState(type === "mp4" ? false : true);
+  const[isImage] = useState(type === "mp4" ? false : true);
 
 
   const handleLike = () => {

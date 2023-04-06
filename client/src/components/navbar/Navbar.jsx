@@ -12,7 +12,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
-import axios from "axios";
+
 import { useState } from "react";
 
 const Navbar = () => {
@@ -21,10 +21,9 @@ const Navbar = () => {
   const object = JSON.parse(localStorage.getItem("user"));
   const user_id = object.id;
 
-  const [err, setErr] = useState(null);
 
   const navigate = useNavigate()
-  const { logout } = useContext(AuthContext);
+
   const handleLogout = async (e) => {
     // e.preventDefault();
     try {
